@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe BoardsController, type: :controller do
+RSpec.describe Api::Meta::BoardsController, type: :controller do
 
 end

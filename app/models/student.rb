@@ -4,8 +4,6 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-	has_one :board
-	has_one :grade
 	has_many :votes, dependent: :destroy
 	has_many :attempts, dependent: :destroy
 	has_many :notes, dependent: :destroy

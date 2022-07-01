@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe ChapterContent, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it {should belong_to(:chapter) }
+  it {should belong_to(:content) }
 end

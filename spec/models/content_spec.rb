@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Content, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:sno) }
+  it { should validate_presence_of(:type_name) }
 end

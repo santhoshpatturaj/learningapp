@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe AnswersController, type: :controller do
+RSpec.describe Api::ExerciseManagement::AnswersController, type: :controller do
 
 end

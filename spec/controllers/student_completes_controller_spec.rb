@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe StudentCompletesController, type: :controller do
+RSpec.describe Api::ContentManagement::StudentCompletesController, type: :controller do
 
 end

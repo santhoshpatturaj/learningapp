@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe AttemptsController, type: :controller do
+RSpec.describe Api::ExerciseManagement::AttemptsController, type: :controller do
 
 end

@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe ContentsController, type: :controller do
+RSpec.describe Api::ContentManagement::ContentsController, type: :controller do
 
 end

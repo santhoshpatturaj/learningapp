@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe SubjectsController, type: :controller do
+RSpec.describe Api::Meta::SubjectsController, type: :controller do
 
 end
