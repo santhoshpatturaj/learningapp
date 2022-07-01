@@ -1,0 +1,24 @@
+default: &default
+   adapter: postgresql
+   encoding: unicode
+  
+development:
+   adapter: postgresql
+   encoding: unicode
+   database: learningapp_development
+   username: postgres
+   password: admin
+
+test:
+   adapter: postgresql
+   encoding: unicode
+   database: learningapp_test
+   username: postgres
+   password: admin
+ 
+production:
+   adapter: postgresql
+   encoding: unicode
+   database: learningapp_production
+   username: postgres
+   password: admin
