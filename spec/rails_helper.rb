@@ -31,6 +31,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+  config.include RequestSpecHelper, type: :request
   #config.include RequestSpecHelper
   #config.include ControllerSpecHelper
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
