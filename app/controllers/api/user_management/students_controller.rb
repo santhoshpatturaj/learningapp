@@ -1,7 +1,11 @@
 module User_management
   class Api::UserManagement::StudentsController < Api::ApplicationController
     skip_before_action :doorkeeper_authorize!, only: [:create, :get_otp]
-    before_action :set_student, only: [:update]
+    before_action :set_student, only: [:update, :index]
+
+    def index
+      json_response(@student)
+    end
 
     def create
       @otp = gen_otp
@@ -43,7 +47,7 @@ module User_management
     end
 
     def choose_params
-      params.permit(:board_id, :grade_id, :profile_photo)
+      params.permit(:board_id, :grade_id, :profile_photo, :email, :dob)
     end
 
     def generate_refresh_token

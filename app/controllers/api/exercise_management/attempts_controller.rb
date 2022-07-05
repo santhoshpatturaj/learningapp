@@ -1,6 +1,7 @@
 module Exercise_management
 	class Api::ExerciseManagement::AttemptsController < Api::ApplicationController
 
+		before_action :doorkeeper_authorize!
 		before_action :set_attempt, only: [:show, :update, :destroy]
 		before_action :set_student
 
