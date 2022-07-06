@@ -1,7 +1,6 @@
 module Meta
 	class Api::Meta::SubjectsController < Api::ApplicationController
-		skip_before_action :doorkeeper_authorize!
-		before_action :doorkeeper_authorize!, only: [:index]
+		skip_before_action :doorkeeper_authorize!, only: [:create, :show, :update, :destroy]
 		before_action :set_student, only: [:index]
 
 		before_action :set_subject, only: [:show, :update, :destroy]

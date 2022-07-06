@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :content do
-    sno { 1 }
-    type_id { 1 }
+    sno { Faker::Number.number(digits: 3) }
   end
 end

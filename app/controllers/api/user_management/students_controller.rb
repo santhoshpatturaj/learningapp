@@ -38,6 +38,7 @@ module User_management
       @expiry = Time.now() + (2*60)
       puts "OTP: #{@otp} Expiry: #{@expiry}"
       user.update(password: @otp, otp_timestamp: @expiry)
+      head :no_content
     end
 
     private
