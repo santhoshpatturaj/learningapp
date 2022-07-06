@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       resources :questions
       resources :attempts
       resources :answers
+      post '/get_result', to: 'answers#get_result'
     end
 
   end

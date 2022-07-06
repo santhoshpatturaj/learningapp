@@ -22,6 +22,7 @@ RSpec.describe 'Answers API', type: :request do
     ) }
   let(:answer_id) { answer1.id }
 
+
   # Test suite for GET /answers
   describe 'GET /api/exercise_management/answers' do
     # make HTTP get request before each example
@@ -136,4 +137,14 @@ RSpec.describe 'Answers API', type: :request do
       expect(response).to have_http_status(204)
     end
   end
+
+  describe 'POST /api/exercise_management/get_result' do
+    before { login(student) }
+    before { post '/api/exercise_management/get_result', params: { attempt_id: attempt_id } }
+    it 'returns score' do
+      expect(json).not_to be_empty
+      expect(json['attempt_id'].to_i).to eq(attempt_id)
+    end
+  end
+
 end

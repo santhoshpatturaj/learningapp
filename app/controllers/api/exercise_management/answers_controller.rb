@@ -27,6 +27,19 @@ module Exercise_management
 			head :no_content
 		end
 
+		def get_result
+			score = 0
+			@answers = Answer.where(attempt_id: answer_params[:attempt_id])
+			@answers.each do | answer |
+				question = Question.where(id: answer.question_id).first
+				if answer.status != 'not_answered' && answer["option"] == question["correct_answer"]
+					score += question.mark
+				end
+			end
+			render(json: { attempt_id: answer_params[:attempt_id],
+				score: score }, status: 200)
+		end
+
 		private
 
 		def answer_params
