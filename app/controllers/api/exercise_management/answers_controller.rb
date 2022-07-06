@@ -1,9 +1,7 @@
 module Exercise_management
 	class Api::ExerciseManagement::AnswersController < Api::ApplicationController
-		before_action :doorkeeper_authorize!
 
 		before_action :set_answer, only: [:show, :update, :destroy]
-
 
 		def index
 	    	@answers = Answer.where(attempt_id: answer_params[:attempt_id])
