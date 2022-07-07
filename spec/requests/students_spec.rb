@@ -69,12 +69,12 @@ RSpec.describe 'Students API', type: :request do
   end
 
   # Test suite for POST /students/get_otp
-  describe 'POST /api/user_management/students/get_otp' do
+  describe 'POST /api/user_management/auth/get_otp' do
     let(:valid_attributes) { {
       mobile: mobile } }
 
     context 'when the request is valid' do
-      before { post '/api/user_management/students/get_otp', params: valid_attributes }
+      before { post '/api/user_management/auth/get_otp', params: valid_attributes }
 
       it 'updates the record' do
         expect(response.body).to be_empty

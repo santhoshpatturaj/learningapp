@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     namespace :user_management do
       resources :students
       post 'auth/sign_up', to: 'students#create'
+      post 'auth/get_otp', to: 'students#get_otp'
       put 'students/update', to: 'students#update'
-      post 'students/get_otp', to: 'students#get_otp'
     end
 
     namespace :meta do
