@@ -20,7 +20,7 @@ RSpec.describe 'ChapterContents API', type: :request do
   # Test suite for GET /chapter_contents
   describe 'GET /api/content_management/chapter_contents' do
     # make HTTP get request before each example
-    before { get '/api/content_management/chapter_contents' }
+    before { get '/api/content_management/chapter_contents', params: { chapter_id: chapter_id} }
 
     it 'returns chapter_contents' do
       # Note `json` is a custom helper to parse JSON responses

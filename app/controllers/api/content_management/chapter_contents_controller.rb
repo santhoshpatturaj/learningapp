@@ -6,7 +6,7 @@ module ContentManagement
 
 
 		def index
-	    	@chapter_contents = ChapterContent.all
+	    	@chapter_contents = ChapterContent.where(chapter_id: chapter_content_params[:chapter_id])
 	    	json_response(@chapter_contents)
   		end
 
