@@ -6,8 +6,18 @@ module ContentManagement
 
 
 		def index
-	    	@votes = Vote.all
-	    	json_response(@votes)
+			upvotes = 0
+			downvotes = 0
+	    	@votes = Vote.where(content_id: vote_params[:content_id])
+	    	@votes.each do | vote |
+	    		if vote.upvote?
+	    			upvotes += 1
+	    		elsif vote.downvote?
+	    			downvotes += 1
+	    		end
+	    	end
+	    	render(json: { content_id: vote_params[:content_id],
+	    		upvotes: upvotes, downvotes: downvotes }, status: 200)
   		end
 
 		def create
