@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     
     namespace :user_management do
       resources :students
+      post 'auth/signup', to: 'auth#signup'
+      delete 'auth/logout', to: 'auth#logout'
+      post 'auth/login', to: 'auth#login'
+      post 'auth/getotp', to: 'auth#get_otp'
+
       post 'auth/sign_up', to: 'students#create'
       post 'auth/get_otp', to: 'students#get_otp'
       put 'students/update', to: 'students#update'
