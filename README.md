@@ -1,1 +1,8 @@
 Learning app rails API 
+
+
+
+
+
+
+ 
